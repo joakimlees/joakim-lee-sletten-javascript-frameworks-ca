@@ -1,7 +1,8 @@
 import "./App.css";
+import NavHeader from "./components/NavHeader";
 
 function App() {
-  return console.log("hello");
+  return <NavHeader />;
 }
 
 export default App;
