@@ -4,7 +4,7 @@ import { ContainerStyles } from "./styles/Container.styles";
 export default function NavHeader() {
   return (
     <NavHeaderStyles>
-      <ContainerStyles>
+      <ContainerStyles directionColumn={false}>
         <div>Logo</div>
         <nav>
           <ul>
@@ -13,7 +13,10 @@ export default function NavHeader() {
             <li>Contact</li>
           </ul>
         </nav>
-        <div>Cart-icon</div>
+        <div>
+          <div>cart-icon</div>
+          <div>counter: 0</div>
+        </div>
       </ContainerStyles>
     </NavHeaderStyles>
   );

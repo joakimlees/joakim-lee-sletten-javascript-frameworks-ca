@@ -1,23 +1,21 @@
 import styled from "styled-components";
 
 export const NavHeaderStyles = styled.header`
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  background-color: red;
-  color: white;
-  font-size: 20px;
+  border-style: solid;
+  border-color: red;
+
+
+  }
+
   nav {
-    background-color: blue;
+    flex-grow: 1;
     ul {
       display: flex;
       justify-content: space-evenly;
       list-style: none;
       padding: 0px;
-      margin: 0px;
-      li {
-        margin: 0px 30px;
-      }
     }
+
   }
+
 `;
