@@ -10,24 +10,6 @@ export const NavHeader = styled.header`
 
   nav {
     flex-grow: 1;
-    ul {
-      display: flex;
-      justify-content: space-evenly;
-      padding: 0px;
-      li {
-
-        list-style: none;
-        color: ${props => props.theme.color.lightgreen};
-        font-family: ${props => props.theme.font.paragraphs};
-        font-weight: ${props => props.theme.fontWeight.semiBold};
-        font-size: ${props => props.theme.fontSize.medium};
-   
-       
-
-      }
-      
-    }
-
   }
 
 `;

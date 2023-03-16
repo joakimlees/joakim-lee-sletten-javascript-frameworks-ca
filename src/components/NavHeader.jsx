@@ -5,13 +5,13 @@ export default function NavHeader() {
   return (
     <Styles.NavHeader>
       <Styles.TopNavContainer>
-        <div>Logo</div>
+        <div>Ecom-Store</div>
         <nav>
-          <ul>
+          <Styles.TopNavList>
             <li>Home</li>
             <li>Products</li>
             <li>Contact</li>
-          </ul>
+          </Styles.TopNavList>
         </nav>
         <Styles.CartContainer>
           <div>0</div>
