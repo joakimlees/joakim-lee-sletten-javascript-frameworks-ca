@@ -11,6 +11,10 @@ body {
   sans-serif;
 }
 
+img {
+  width: 100%;
+}
+
 
 
 

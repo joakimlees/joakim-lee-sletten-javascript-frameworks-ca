@@ -1,4 +1,5 @@
 import * as Styles from "./styles/index";
+import cart from "../build/images/cart.svg";
 
 export default function NavHeader() {
   return (
@@ -12,12 +13,12 @@ export default function NavHeader() {
             <li>Contact</li>
           </ul>
         </nav>
-        <div>
-          <div>
-            <img src="" alt="shopping-cart-icon" />
-          </div>
-          <div>counter: 0</div>
-        </div>
+        <Styles.CartContainer>
+          <div>0</div>
+          <Styles.CartIconWrapper>
+            <img src={cart} alt="logo" />
+          </Styles.CartIconWrapper>
+        </Styles.CartContainer>
       </Styles.TopNavContainer>
     </Styles.NavHeader>
   );
