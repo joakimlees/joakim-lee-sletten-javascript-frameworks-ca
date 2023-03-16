@@ -3,8 +3,6 @@ import styled from "styled-components";
 export const NavHeaderStyles = styled.header`
   border-style: solid;
   border-color: red;
-
-
   }
 
   nav {
@@ -12,8 +10,14 @@ export const NavHeaderStyles = styled.header`
     ul {
       display: flex;
       justify-content: space-evenly;
-      list-style: none;
+      li {
+        list-style: none;
+
+      }
+      
       padding: 0px;
+      font-family: ${props => props.theme.fonts.headings};
+      font-weight: 400;
     }
 
   }

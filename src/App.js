@@ -1,8 +1,14 @@
 import "./App.css";
 import NavHeader from "./components/NavHeader";
+import { GlobalStyles } from "./components/styles/Global.styles";
 
 function App() {
-  return <NavHeader />;
+  return (
+    <>
+      <GlobalStyles />
+      <NavHeader />
+    </>
+  );
 }
 
 export default App;
