@@ -9,5 +9,5 @@ export const BaseContainer = styled.div`
 export const TopNavContainer = styled(BaseContainer)`
   display: flex;
   justify-content: space-around;
-  align-items: center;
+  align-items: baseline;
 `;
