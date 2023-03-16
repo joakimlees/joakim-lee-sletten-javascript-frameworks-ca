@@ -1,25 +1,24 @@
 import * as Styles from "./styles/index";
-import { ThemeProvider } from "styled-components";
 
 export default function NavHeader() {
   return (
-    <ThemeProvider theme={Styles.theme}>
-      <Styles.NavHeader>
-        <Styles.TopNavContainer>
-          <div>Logo</div>
-          <nav>
-            <ul>
-              <li>Home</li>
-              <li>Products</li>
-              <li>Contact</li>
-            </ul>
-          </nav>
+    <Styles.NavHeader>
+      <Styles.TopNavContainer>
+        <div>Logo</div>
+        <nav>
+          <ul>
+            <li>Home</li>
+            <li>Products</li>
+            <li>Contact</li>
+          </ul>
+        </nav>
+        <div>
           <div>
-            <div>cart-icon</div>
-            <div>counter: 0</div>
+            <img src="" alt="shopping-cart-icon" />
           </div>
-        </Styles.TopNavContainer>
-      </Styles.NavHeader>
-    </ThemeProvider>
+          <div>counter: 0</div>
+        </div>
+      </Styles.TopNavContainer>
+    </Styles.NavHeader>
   );
 }

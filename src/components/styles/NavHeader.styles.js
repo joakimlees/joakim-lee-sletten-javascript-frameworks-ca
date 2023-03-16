@@ -1,10 +1,9 @@
 import styled from "styled-components";
 
 export const NavHeader = styled.header`
-  border-style: solid;
-  border-color: red;
+
   padding: 10px 5px;
-  background-color: ${props => props.theme.color.light}
+  background-color: ${props => props.theme.color.dark}
   }
 
   nav {
@@ -14,11 +13,13 @@ export const NavHeader = styled.header`
       justify-content: space-evenly;
       padding: 0px;
       li {
-        border-style: solid;
+
         list-style: none;
-        color: ${props => props.theme.color.dark};
+        color: ${props => props.theme.color.lightgreen};
         font-family: ${props => props.theme.font.paragraphs};
-        font-weight: ${props => props.theme.fontWeight.bold};
+        font-weight: ${props => props.theme.fontWeight.semiBold};
+        font-size: ${props => props.theme.fontSize.medium};
+   
        
 
       }
