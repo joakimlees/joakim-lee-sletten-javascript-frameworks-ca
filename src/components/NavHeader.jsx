@@ -4,21 +4,21 @@ import cart from "../build/images/cart.svg";
 export default function NavHeader() {
   return (
     <Styles.NavHeader>
+      <div className="logo">Ecom-Store</div>
       <Styles.TopNavContainer>
-        <div>Ecom-Store</div>
         <nav>
-          <Styles.TopNavList>
+          <ul>
             <li>Home</li>
             <li>Products</li>
             <li>Contact</li>
-          </Styles.TopNavList>
+          </ul>
         </nav>
-        <Styles.CartContainer>
-          <div>0</div>
-          <Styles.CartIconWrapper>
+        <div className="cart-container">
+          <div className="cart-counter">0</div>
+          <div className="cart-icon-wrapper">
             <img src={cart} alt="logo" />
-          </Styles.CartIconWrapper>
-        </Styles.CartContainer>
+          </div>
+        </div>
       </Styles.TopNavContainer>
     </Styles.NavHeader>
   );

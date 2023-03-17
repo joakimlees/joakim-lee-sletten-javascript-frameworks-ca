@@ -8,6 +8,10 @@ export const BaseContainer = styled.div`
 
 export const TopNavContainer = styled(BaseContainer)`
   display: flex;
-  justify-content: space-around;
   align-items: baseline;
+  border-top: 1px solid ${props => props.theme.color.light};
+
+  @media (max-width: ${props => props.theme.screen.small}) {
+    font-size: ${props => props.theme.font.size.small};
+  }
 `;
