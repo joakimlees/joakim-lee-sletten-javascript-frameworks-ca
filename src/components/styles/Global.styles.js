@@ -4,11 +4,24 @@ export const GlobalStyles = createGlobalStyle`
 
 
 body {
+  height: 100vh;
   margin: 0;
-
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
   'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
   sans-serif;
+}
+
+
+.test {
+  flex-grow: 1;
+  background-color: lightblue;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  border-style: solid;
 }
 
 img {

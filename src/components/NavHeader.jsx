@@ -1,7 +1,7 @@
 import * as Styles from "./styles/index";
 import cart from "../build/images/cart.svg";
 
-export default function NavHeader() {
+export function NavHeader() {
   return (
     <Styles.NavHeader>
       <div className="logo">Ecom-Store</div>
