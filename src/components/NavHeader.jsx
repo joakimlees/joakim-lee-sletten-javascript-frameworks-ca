@@ -1,5 +1,6 @@
 import * as Styles from "./styles/index";
 import cart from "../build/images/cart.svg";
+import { Link } from "react-router-dom";
 
 export function NavHeader() {
   return (
@@ -8,9 +9,15 @@ export function NavHeader() {
       <Styles.TopNavContainer>
         <nav>
           <ul>
-            <li>Home</li>
-            <li>Products</li>
-            <li>Contact</li>
+            <li>
+              <Link to="/">Home</Link>
+            </li>
+            <li>
+              <Link to="/products">Products</Link>
+            </li>
+            <li>
+              <Link to="/Cart">Cart</Link>
+            </li>
           </ul>
         </nav>
         <div className="cart-container">
