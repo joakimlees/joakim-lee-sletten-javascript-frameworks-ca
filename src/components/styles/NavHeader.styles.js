@@ -21,6 +21,14 @@ export const NavHeader = styled.header`
 
       li {
         margin: 0px 20px;
+
+        a {
+          color: ${props => props.theme.color.lightgreen};
+          text-decoration: none;
+          :hover {
+            color: red;
+          }
+        }
       }
     }
   }
