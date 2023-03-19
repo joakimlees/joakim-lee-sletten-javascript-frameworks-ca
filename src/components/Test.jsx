@@ -17,12 +17,41 @@ export function Test() {
   }, []);
 
   return (
-    <div>
+    <article>
       {products.map(product => (
         <div>
-          <h2>{product.title}</h2>
+          {console.log(product)}
+          <div>
+            <img src={product.imageUrl} alt={"image of " + product.title} />
+          </div>
+          <div>
+            <h2>{product.title}</h2>
+            <div>
+              {product.tags.map(tag => (
+                <div>
+                  <div>{tag}</div>
+                </div>
+              ))}
+            </div>
+            <div>
+              <div>{product.price}</div>
+              <div>{product.discountedPrice}</div>
+            </div>
+            <div>
+              <p>{product.description}</p>
+              <div>{product.rating}</div>
+              <div>
+                {product.reviews.map(reviews => (
+                  <div>
+                    <div>{reviews.username}</div>
+                    <div>{reviews.rating}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
         </div>
       ))}
-    </div>
+    </article>
   );
 }
