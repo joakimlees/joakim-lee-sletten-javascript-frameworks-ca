@@ -18,10 +18,13 @@ body {
 }
 
 #root {
+  height: 100%;
+}
+
+.site-container {
   display: flex;
   flex-direction: column;
   height: 100%;
-  border-style: solid;
 }
 
 img {
