@@ -1,5 +1,6 @@
 import { API_ONLINE_SHOP_URL } from "../api/constant";
 import React, { useEffect, useState } from "react";
+import { ProductCard } from "./ProductCard";
 
 export function Test() {
   const [products, setProducts] = useState([]);
@@ -18,39 +19,9 @@ export function Test() {
 
   return (
     <article>
+      <h1>Products</h1>
       {products.map(product => (
-        <div>
-          {console.log(product)}
-          <div>
-            <img src={product.imageUrl} alt={"image of " + product.title} />
-          </div>
-          <div>
-            <h2>{product.title}</h2>
-            <div>
-              {product.tags.map(tag => (
-                <div>
-                  <div>{tag}</div>
-                </div>
-              ))}
-            </div>
-            <div>
-              <div>{product.price}</div>
-              <div>{product.discountedPrice}</div>
-            </div>
-            <div>
-              <p>{product.description}</p>
-              <div>{product.rating}</div>
-              <div>
-                {product.reviews.map(reviews => (
-                  <div>
-                    <div>{reviews.username}</div>
-                    <div>{reviews.rating}</div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
+        <ProductCard />
       ))}
     </article>
   );
