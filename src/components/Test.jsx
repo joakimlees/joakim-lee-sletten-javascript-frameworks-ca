@@ -1,4 +1,4 @@
-import { API_ONLINE_SHOP_URL } from "../api/constant";
+import { API_ONLINE_SHOP_URL } from "../api/constants";
 import React, { useEffect, useState } from "react";
 import { ProductCard } from "./ProductCard";
 
