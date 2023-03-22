@@ -25,6 +25,7 @@ export function Products() {
             {data.map(product => (
               <li key={product.id}>
                 <ProductCard product={product} />
+                {console.log(product)}
               </li>
             ))}
           </ul>
