@@ -21,7 +21,7 @@ export function Products() {
           <h2>List of products</h2>
           <ul>
             {data.map(product => (
-              <li>
+              <li key={product.id}>
                 <ProductCard product={product} />
               </li>
             ))}
