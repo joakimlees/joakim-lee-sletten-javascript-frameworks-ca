@@ -3,7 +3,6 @@ import { GlobalStyles } from "./components/styles/Global.styles";
 import { ThemeProvider } from "styled-components";
 import * as Styles from "./components/styles/index";
 import * as Page from "./components/pages/index";
-import { Test } from "./components/Test";
 import { Routes, Route } from "react-router-dom";
 import { Layout } from "./components/Layout";
 
@@ -19,7 +18,7 @@ function App() {
           <Route path="cart" element={<Page.Cart />} />
           <Route path="checkout" element={<Page.Checkout />} />
           <Route path="checkout-success" element={<Page.CheckoutSuccess />} />
-          <Route path="test" element={<Test />} />
+          <Route path="contact" element={<Page.Contact />} />
         </Route>
       </Routes>
     </ThemeProvider>

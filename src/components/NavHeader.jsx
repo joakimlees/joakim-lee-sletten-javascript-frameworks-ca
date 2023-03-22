@@ -16,7 +16,7 @@ export function NavHeader() {
               <Link to="/products">Products</Link>
             </li>
             <li>
-              <Link to="/test">test</Link>
+              <Link to="/contact">Contact</Link>
             </li>
           </ul>
         </nav>
