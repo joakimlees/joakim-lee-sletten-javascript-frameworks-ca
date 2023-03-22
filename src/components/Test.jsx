@@ -4,21 +4,15 @@ import { ProductCard } from "./ProductCard";
 import { useFetch } from "../api/getData";
 
 export function Test() {
-  const { data } = useFetch(API_ONLINE_SHOP_URL);
+  const { data, loading, error } = useFetch(API_ONLINE_SHOP_URL);
 
-  /*const [products, setProducts] = useState([]);
-
-  useEffect(() => {
-    const getProducts = async () => {
-      setProducts(await getData(API_ONLINE_SHOP_URL));
-    };
-    getProducts();
-  }, []);
-
-  if (products instanceof Error) {
-    return <div>It was an error</div>;
+  if (loading) {
+    return <div>loading..................</div>;
   }
-  */
+
+  if (error) {
+    return <div>my error</div>;
+  }
 
   if (data.length > 0) {
     return (
