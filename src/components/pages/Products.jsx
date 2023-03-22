@@ -14,6 +14,8 @@ export function Products() {
     return <div>my error</div>;
   }
 
+  //consider refactor and move li to product card and key with same item as props
+
   if (data.length > 0) {
     return (
       <Styles.Products>
