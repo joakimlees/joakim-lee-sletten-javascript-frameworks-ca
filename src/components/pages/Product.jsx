@@ -10,7 +10,9 @@ export function Product() {
 
   return (
     <Styled.Product>
-      <h1>hello{console.log(data)}</h1>
+      <Styled.BaseContainer>
+        <h1>hello{console.log(data)}</h1>
+      </Styled.BaseContainer>
     </Styled.Product>
   );
 }
