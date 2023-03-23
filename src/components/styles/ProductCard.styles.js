@@ -25,4 +25,9 @@ export const ProductCard = styled.article`
     display: flex;
     justify-content: space-between;
   }
+
+  button {
+    background-color: lightgreen;
+    padding: 10px;
+  }
 `;
