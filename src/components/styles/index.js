@@ -5,3 +5,4 @@ export * from "./Footer";
 export * from "./Home.styles";
 export * from "./ProductCard.styles";
 export * from "./Products.styles";
+export * from "./Product.styles";

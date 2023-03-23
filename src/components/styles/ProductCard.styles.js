@@ -26,8 +26,13 @@ export const ProductCard = styled.article`
     justify-content: space-between;
   }
 
-  button {
+  a {
+    text-align: center;
+    text-decoration: none;
     background-color: lightgreen;
+    color: black;
+    font-weight: bold;
+    border: solid;
     padding: 10px;
   }
 `;

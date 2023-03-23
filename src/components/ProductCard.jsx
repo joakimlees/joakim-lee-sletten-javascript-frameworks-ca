@@ -13,9 +13,7 @@ export function ProductCard({ product: { id, title, imageUrl, rating, price, dis
         <div className="price">Price {price}</div>
         <div className="discount-price">discount Price: {discountedPrice}</div>
       </div>
-      <button>
-        <Link to={`/product/${id}`}>Click me</Link>
-      </button>
+      <Link to={`/product/${id}`}>Click me</Link>
     </Styles.ProductCard>
   );
 }
