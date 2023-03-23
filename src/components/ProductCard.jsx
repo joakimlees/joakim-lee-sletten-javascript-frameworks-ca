@@ -1,6 +1,7 @@
+import { Link } from "react-router-dom";
 import * as Styles from "./styles/index";
 
-export function ProductCard({ product: { title, imageUrl, rating, price, discountedPrice } }) {
+export function ProductCard({ product: { id, title, imageUrl, rating, price, discountedPrice } }) {
   return (
     <Styles.ProductCard>
       <div className="image-wrapper">
@@ -12,7 +13,9 @@ export function ProductCard({ product: { title, imageUrl, rating, price, discoun
         <div className="price">Price {price}</div>
         <div className="discount-price">discount Price: {discountedPrice}</div>
       </div>
-      <button>Click me</button>
+      <button>
+        <Link to={`/product/${id}`}>Click me</Link>
+      </button>
     </Styles.ProductCard>
   );
 }
