@@ -5,31 +5,44 @@ export const Product = styled.main`
 
   h1 {
     color: red;
-  }
-
-  article {
-    border: solid;
     text-align: center;
   }
 
   .product-content-wrapper {
     display: flex;
     flex-wrap: wrap;
-    border: solid;
-    border-color: blue;
+    justify-content: center;
+    gap: 15px;
+
+    button,
+    a {
+      display: flex;
+      text-decoration: none;
+      padding: 20px;
+      background-color: lightgreen;
+      border: solid;
+      color: black;
+      justify-content: center;
+    }
 
     .product-info-wrapper {
-      border: solid;
-      border-color: lightgreen;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+
+      width: 50%;
+      min-width: 300px;
+
+      a {
+        background-color: yellow;
+      }
     }
 
     .image-wrapper {
       display: flex;
       justify-content: center;
       align-items: center;
-      height: 200px;
-      border: solid;
-      border-color: pink;
+      height: 300px;
 
       img {
         width: 100%;
