@@ -12,21 +12,23 @@ export const Checkout = styled.main`
 
     .order-details-wrapper {
       display: flex;
-      background-color: red;
       gap: 20px;
 
       .product-wrapper {
         flex-grow: 1;
         border: solid;
+        background-color: red;
       }
 
       .summary-wrapper {
         border: solid;
+        background-color: lightgreen;
       }
     }
 
     .payment-info-wrapper {
       border: solid;
+      background-color: grey;
     }
   }
 `;
