@@ -9,17 +9,27 @@ export const Product = styled.main`
 
   article {
     border: solid;
+    text-align: center;
   }
 
-  .product-info-wrapper {
+  .product-content-wrapper {
     display: flex;
     flex-wrap: wrap;
+    border: solid;
+    border-color: blue;
+
+    .product-info-wrapper {
+      border: solid;
+      border-color: lightgreen;
+    }
 
     .image-wrapper {
       display: flex;
       justify-content: center;
       align-items: center;
       height: 200px;
+      border: solid;
+      border-color: pink;
 
       img {
         width: 100%;

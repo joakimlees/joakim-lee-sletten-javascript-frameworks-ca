@@ -24,11 +24,11 @@ export function Product() {
         <h1>{console.log(data)}</h1>
         <article>
           <h1>{title}</h1>
-          <div className="product-info-wrapper">
+          <div className="product-content-wrapper">
             <div className="image-wrapper">
               <img src={imageUrl} alt="" />
             </div>
-            <div>informastion</div>
+            <div className="product-info-wrapper">informastion</div>
           </div>
         </article>
       </Styled.BaseContainer>
