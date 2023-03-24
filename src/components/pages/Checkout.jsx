@@ -11,9 +11,12 @@ export function Checkout() {
             <div className="order-details-wrapper">
               <div className="product-wrapper">
                 <h3>Products</h3>
+                <h4>product name</h4>
+                <div>price</div>
               </div>
               <div className="summary-wrapper">
                 <h3>Summary</h3>
+                <div>name</div>
               </div>
             </div>
             <div className="payment-info-wrapper">
