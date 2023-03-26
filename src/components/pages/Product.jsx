@@ -19,10 +19,14 @@ export function Product() {
 
   const { title, imageUrl, rating, price, discountedPrice, description } = data;
 
+  function addToCartButtonClick() {
+    return console.log("button clicked");
+  }
+
   return (
     <Styled.Product>
       <Styled.BaseContainer>
-        <h1>{console.log(data)}</h1>
+        <h1></h1>
         <article>
           <h1>Product</h1>
           <div className="product-content-wrapper">
@@ -35,7 +39,7 @@ export function Product() {
               <div>{discountedPrice}</div>
               <div>{rating}</div>
               <div>{description}</div>
-              <button>Add to cart</button>
+              <button onClick={addToCartButtonClick}>Add to cart</button>
               <Link to={`/checkout`}>Go to checkout</Link>
             </article>
           </div>
