@@ -20,7 +20,7 @@ export function Product() {
   const { title, imageUrl, rating, price, discountedPrice, description } = data;
 
   function addToCartButtonClick() {
-    return console.log("button clicked");
+    return console.log(data);
   }
 
   return (
