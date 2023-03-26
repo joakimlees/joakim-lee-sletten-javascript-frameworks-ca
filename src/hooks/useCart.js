@@ -1,4 +1,4 @@
-export function useCart(id) {
+/*export function useCart(id) {
   function addToCart(id) {
     console.log("add to cart" + id);
   }
@@ -13,3 +13,4 @@ export function useCart(id) {
 
   return { addToCart, clearCart, setProducts };
 }
+*/
