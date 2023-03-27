@@ -3,9 +3,11 @@ import { API_ONLINE_SHOP_URL } from "../../api/constants";
 import { useFetch } from "../../hooks/useFetch";
 import * as Styled from "../styles/index";
 import { Link } from "react-router-dom";
+import { useCart } from "../../hooks/useCart";
 
 export function Product() {
   let { id } = useParams();
+  const { addToCart } = useCart(id);
   const url = API_ONLINE_SHOP_URL + "/" + id;
   const { data, loading, error } = useFetch(url);
 
@@ -20,7 +22,7 @@ export function Product() {
   const { title, imageUrl, rating, price, discountedPrice, description } = data;
 
   function addToCartButtonClick() {
-    return console.log(data);
+    addToCart(title);
   }
 
   return (
