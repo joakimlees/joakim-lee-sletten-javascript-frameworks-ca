@@ -2,7 +2,7 @@ import { create } from "zustand";
 
 export const useCartStore = create(set => ({
   products: [{}],
-  addProducts: product => set(state => ({ products: [{ id: product.id, title: product.title, price: product.price }, ...state.products] })),
+  addProducts: product => set(state => ({ products: [{ id: product.id, title: product.title, price: product.price, imageUrl: product.imageUrl }, ...state.products] })),
 
   /*
   products: [{}],

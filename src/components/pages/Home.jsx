@@ -6,7 +6,11 @@ export function Home() {
   return (
     <Styled.Home>
       <Styled.BaseContainer>
-        {console.log("homepage" + test)}
+        {console.log(
+          test.map(product => {
+            console.log(product);
+          })
+        )}
         <h1>Home</h1>
       </Styled.BaseContainer>
     </Styled.Home>
