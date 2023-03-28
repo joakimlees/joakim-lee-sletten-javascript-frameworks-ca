@@ -12,11 +12,11 @@ export function Product() {
   const { data, loading, error } = useFetch(url);
 
   if (loading) {
-    return <div>loading..................</div>;
+    return <div>...........loading.............</div>;
   }
 
   if (error) {
-    return <div>my error</div>;
+    return <div>my error message</div>;
   }
 
   const { title, imageUrl, rating, price, discountedPrice, description } = data;
