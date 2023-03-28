@@ -7,7 +7,7 @@ import { useCart } from "../../hooks/useCart";
 
 export function Product() {
   let { id } = useParams();
-  const { addToCart } = useCart(id);
+  const { addToCart, clearCart } = useCart();
   const url = API_ONLINE_SHOP_URL + "/" + id;
   const { data, loading, error } = useFetch(url);
 
@@ -21,8 +21,12 @@ export function Product() {
 
   const { title, imageUrl, rating, price, discountedPrice, description } = data;
 
-  function addToCartButtonClick() {
-    addToCart(title);
+  function addToCartButtOnClick() {
+    addToCart(data);
+  }
+
+  function clearToCartButtOnClick() {
+    clearCart();
   }
 
   return (
@@ -41,7 +45,8 @@ export function Product() {
               <div>{discountedPrice}</div>
               <div>{rating}</div>
               <div>{description}</div>
-              <button onClick={addToCartButtonClick}>Add to cart</button>
+              <button onClick={addToCartButtOnClick}>Add to cart</button>
+              <button onClick={clearToCartButtOnClick}>Clear cart</button>
               <Link to={`/checkout`}>Go to checkout</Link>
             </article>
           </div>

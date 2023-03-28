@@ -1,8 +1,17 @@
 import { create } from "zustand";
 
 export const useCartStore = create(set => ({
+  products: {},
+  products: [{}],
+  addProducts: product => set(state => ({ products: [{ id: product.id, title: product.title, price: product.price }, ...state.products] })),
+
+  /*
+  products: [{}],
+  addProducts: product => set(state => ({ products: [{ id: product.id }, ...state.products] })),
+*/
+  /*
   products: [],
-  addProducts: title => set(state => ({ products: [...state.products, title] })),
+  addProducts: id => set(state => ({ products: [...state.products, id] })),*/
   clearProducts: () => set({ products: [] }),
 }));
 
@@ -11,14 +20,14 @@ export function useCart() {
   const clearProduct = useCartStore(state => state.clearProducts);
   const products = useCartStore(state => state.products);
 
-  function addToCart(title) {
-    addProduct(title);
+  function addToCart(id) {
+    addProduct(id);
     console.log(products);
   }
 
   function clearCart() {
-    console.log("clear cart");
     clearProduct();
+    console.log(products);
   }
 
   function setProducts() {
