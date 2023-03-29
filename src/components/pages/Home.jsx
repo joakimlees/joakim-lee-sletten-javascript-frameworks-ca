@@ -1,5 +1,4 @@
 import * as Styled from "../styles/index";
-import { useCartStore } from "../../hooks/useCart";
 
 export function Home() {
   return (

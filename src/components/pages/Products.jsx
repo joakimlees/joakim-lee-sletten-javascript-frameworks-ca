@@ -23,6 +23,22 @@ export function Products() {
           <h2>List of products</h2>
           <ul>
             {data.map(product => (
+              <ProductCard key={product.id} product={product} />
+            ))}
+          </ul>
+        </Styles.BaseContainer>
+      </Styles.Products>
+    );
+  }
+}
+
+/*
+    return (
+      <Styles.Products>
+        <Styles.BaseContainer>
+          <h2>List of products</h2>
+          <ul>
+            {data.map(product => (
               <li key={product.id}>
                 <ProductCard product={product} />
               </li>
@@ -33,3 +49,4 @@ export function Products() {
     );
   }
 }
+*/

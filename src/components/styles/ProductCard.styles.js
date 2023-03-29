@@ -1,11 +1,14 @@
 import styled from "styled-components";
 
-export const ProductCard = styled.article`
-  display: flex;
-  flex-direction: column;
+export const ProductCard = styled.li`
   padding: 10px;
   border-style: solid;
   background-color: lightblue;
+
+  article {
+    display: flex;
+    flex-direction: column;
+  }
 
   .image-wrapper {
     display: flex;
@@ -26,7 +29,13 @@ export const ProductCard = styled.article`
     justify-content: space-between;
   }
 
-  a {
+  .button-wrapper {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  a,
+  button {
     text-align: center;
     text-decoration: none;
     background-color: lightgreen;
@@ -34,5 +43,6 @@ export const ProductCard = styled.article`
     font-weight: bold;
     border: solid;
     padding: 10px;
+    width: 100%;
   }
 `;
