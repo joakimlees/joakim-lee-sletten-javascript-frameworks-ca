@@ -20,12 +20,14 @@ export function NavHeader() {
             </li>
           </ul>
         </nav>
-        <div className="cart-container">
-          <div className="cart-counter">0</div>
-          <div className="cart-icon-wrapper">
-            <img src={cart} alt="logo" />
+        <Link to="/cart">
+          <div className="cart-container">
+            <div className="cart-counter">0</div>
+            <div className="cart-icon-wrapper">
+              <img src={cart} alt="logo" />
+            </div>
           </div>
-        </div>
+        </Link>
       </Styles.TopNavContainer>
     </Styles.NavHeader>
   );

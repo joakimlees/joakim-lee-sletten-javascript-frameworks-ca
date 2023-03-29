@@ -19,6 +19,7 @@ function App() {
           <Route path="checkout" element={<Page.Checkout />} />
           <Route path="checkout-success" element={<Page.CheckoutSuccess />} />
           <Route path="contact" element={<Page.Contact />} />
+          <Route path="cart" element={<Page.Cart />} />
         </Route>
       </Routes>
     </ThemeProvider>
