@@ -1,5 +1,4 @@
 import { create } from "zustand";
-import useLocalStorage from "./useLocalStorage";
 
 export const useCartStore = create(set => ({
   products: [],
@@ -22,6 +21,7 @@ export function useCart() {
 
   function addToCart(id) {
     addProduct(id);
+
     console.log(products);
   }
 

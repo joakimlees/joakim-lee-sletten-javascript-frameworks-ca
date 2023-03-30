@@ -24,5 +24,6 @@ export default function useLocalStorage(key, initialValue) {
       console.log(`Unable to store new value '${key}' to localStorage`);
     }
   };
+
   return [valueInLocalStorage, setLocalStorageValue];
 }

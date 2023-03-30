@@ -1,34 +1,42 @@
 import { useParams } from "react-router-dom";
 import { API_ONLINE_SHOP_URL } from "../../api/constants";
-import { useFetch } from "../../hooks/useFetch";
+//import { useFetch } from "../../hooks/useFetch";
 import * as Styled from "../styles/index";
 import { Link } from "react-router-dom";
 import { useCart } from "../../hooks/useCart";
+import { useEffect } from "react";
+import { useProducts, useProductStore } from "../../hooks/useProductStore";
 
 export function Product() {
-  let { id } = useParams();
-  const { addToCart, clearCart } = useCart();
+  const { id } = useParams();
+  //const { addToCart, clearCart } = useCart();
   const url = API_ONLINE_SHOP_URL + "/" + id;
-  const { data, loading, error } = useFetch(url);
+  //const { data, loading, error } = useFetch(url);
+  const { fetchProduct, product, isLoading, hasError } = useProducts();
 
-  if (loading) {
+  useEffect(() => {
+    fetchProduct(url);
+  }, [url]);
+
+  if (isLoading) {
     return <div>...........loading.............</div>;
   }
 
-  if (error) {
+  if (hasError) {
     return <div>my error message</div>;
   }
 
-  const { title, imageUrl, rating, price, discountedPrice, description } = data;
+  const { title, imageUrl, rating, price, discountedPrice, description } = product;
 
+  /*
   function addToCartButtOnClick() {
-    addToCart(data);
+    addToCart(products);
   }
 
   function clearToCartButtOnClick() {
     clearCart();
   }
-
+*/
   return (
     <Styled.Product>
       <Styled.BaseContainer>
@@ -45,9 +53,9 @@ export function Product() {
               <div>{discountedPrice}</div>
               <div>{rating}</div>
               <div>{description}</div>
-              <button onClick={addToCartButtOnClick}>Add to cart</button>
+              {/*<button onClick={addToCartButtOnClick}>Add to cart</button>
               <button onClick={clearToCartButtOnClick}>Clear cart</button>
-              <Link to={`/checkout`}>Go to checkout</Link>
+  <Link to={`/checkout`}>Go to checkout</Link>*/}
             </article>
           </div>
         </article>
