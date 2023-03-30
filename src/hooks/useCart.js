@@ -1,38 +1,30 @@
 import { create } from "zustand";
+import useLocalStorage from "./useLocalStorage";
 
 export const useCartStore = create(set => ({
-  products: [],
+  cart: [],
   addProducts: product => set(state => ({ products: [{ id: product.id, title: product.title, price: product.price, imageUrl: product.imageUrl }, ...state.products] })),
-
-  /*
-  products: [{}],
-  addProducts: product => set(state => ({ products: [{ id: product.id }, ...state.products] })),
-*/
-  /*
-  products: [],
-  addProducts: id => set(state => ({ products: [...state.products, id] })),*/
   clearProducts: () => set({ products: [] }),
+  useAddToCart: item => {
+    set(state => ({ cart: [{ id: item.id, title: item.title, price: item.price, imageUrl: item.imageUrl }, ...state.cart] }));
+  },
 }));
 
 export function useCart() {
-  const addProduct = useCartStore(state => state.addProducts);
+  const addProduct = useCartStore(state => state.useAddToCart);
   const clearProduct = useCartStore(state => state.clearProducts);
-  const products = useCartStore(state => state.products);
+  const cart = useCartStore(state => state.cart);
 
   function addToCart(id) {
     addProduct(id);
 
-    console.log(products);
+    console.log(cart);
   }
 
   function clearCart() {
     clearProduct();
-    console.log(products);
+    console.log(cart);
   }
 
-  function setProducts() {
-    console.log("set products");
-  }
-
-  return { addToCart, clearCart, setProducts };
+  return { addToCart, clearCart };
 }

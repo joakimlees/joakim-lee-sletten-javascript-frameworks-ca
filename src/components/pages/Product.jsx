@@ -13,6 +13,7 @@ export function Product() {
   const url = API_ONLINE_SHOP_URL + "/" + id;
   //const { data, loading, error } = useFetch(url);
   const { fetchProduct, product, isLoading, hasError } = useProducts();
+  const { addToCart, clearCart } = useCart();
 
   useEffect(() => {
     fetchProduct(url);
@@ -28,15 +29,14 @@ export function Product() {
 
   const { title, imageUrl, rating, price, discountedPrice, description } = product;
 
-  /*
   function addToCartButtOnClick() {
-    addToCart(products);
+    addToCart(product);
   }
 
   function clearToCartButtOnClick() {
     clearCart();
   }
-*/
+
   return (
     <Styled.Product>
       <Styled.BaseContainer>
@@ -53,9 +53,9 @@ export function Product() {
               <div>{discountedPrice}</div>
               <div>{rating}</div>
               <div>{description}</div>
-              {/*<button onClick={addToCartButtOnClick}>Add to cart</button>
+              <button onClick={addToCartButtOnClick}>Add to cart</button>
               <button onClick={clearToCartButtOnClick}>Clear cart</button>
-  <Link to={`/checkout`}>Go to checkout</Link>*/}
+              <Link to={`/checkout`}>Go to checkout</Link>
             </article>
           </div>
         </article>
