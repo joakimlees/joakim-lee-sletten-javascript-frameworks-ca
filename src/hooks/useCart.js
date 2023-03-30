@@ -8,10 +8,7 @@ export const useCartStore = create(set => ({
   getLocalStorage: value => {
     const newCart = localStorage.getItem(value);
 
-    set(state => {
-      state.cart = [{ newCart }];
-      console.log(state.cart);
-    });
+    set(state => ({ cart: newCart }));
   },
 
   addToCart: item => {
@@ -27,23 +24,18 @@ export function useCart() {
 
   const [value, setValue] = useLocalStorage();
 
-  useEffect(function buttons() {
-    function addToCart(id) {
-      console.log(typeof cart);
-      setValue(cart);
-      add(id);
+  useEffect(() => {
+    setValue(cart);
+  }, [cart]);
 
-      console.log(cart);
-    }
+  function addToCart(id) {
+    add(id);
+    console.log(cart);
+  }
 
-    function clearCart() {
-      clear();
-      console.log(cart);
-    }
-    return [addToCart, clearCart];
-  });
-
-  const [addToCart, clearCart] = buttons();
+  function clearCart() {
+    clear();
+  }
 
   return { addToCart, clearCart };
 }

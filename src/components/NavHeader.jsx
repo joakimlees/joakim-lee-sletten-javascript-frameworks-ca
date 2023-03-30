@@ -13,7 +13,7 @@ export function NavHeader() {
   useEffect(() => {
     const test = localCart();
     console.log(test);
-  }, []);
+  }, [cart]);
 
   return (
     <Styles.NavHeader>
