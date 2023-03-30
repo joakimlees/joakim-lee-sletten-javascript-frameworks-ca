@@ -1,37 +1,26 @@
 import { create } from "zustand";
-import useLocalStorage from "./useLocalStorage";
-import { useEffect } from "react";
 
 export const useCartStore = create(set => ({
   cart: [],
-  setCart: items => {
-    set(state => ({ cart: localStorage.getItem("cart") }));
-  },
-  useAddToCart: item => {
+  addToCart: item => {
     set(state => ({ cart: [{ id: item.id, title: item.title, price: item.price, imageUrl: item.imageUrl }, ...state.cart] }));
-
-    localStorage.setItem("cart", JSON.stringify({ products: [{ ...item }] }));
   },
-  clearProducts: () => set({ cart: [] }),
+  clearCart: () => set({ cart: [] }),
 }));
 
 export function useCart() {
-  const addProduct = useCartStore(state => state.useAddToCart);
-  const clearProduct = useCartStore(state => state.clearProducts);
+  const add = useCartStore(state => state.addToCart);
+  const clear = useCartStore(state => state.clearCart);
   const cart = useCartStore(state => state.cart);
-  const localCart = useCartStore(state => state.setCart);
-  const [valueInLocalStorage, setValueInLocalStorage] = useLocalStorage();
 
   function addToCart(id) {
-    addProduct(id);
-    localCart(valueInLocalStorage);
-    //setValueInLocalStorage(cart);
+    add(id);
 
     console.log(cart);
   }
 
   function clearCart() {
-    clearProduct();
+    clear();
     console.log(cart);
   }
 

@@ -1,36 +1,28 @@
 import { useParams } from "react-router-dom";
 import { API_ONLINE_SHOP_URL } from "../../api/constants";
-//import { useFetch } from "../../hooks/useFetch";
+import { useFetch } from "../../hooks/useFetch";
 import * as Styled from "../styles/index";
 import { Link } from "react-router-dom";
 import { useCart } from "../../hooks/useCart";
 import { useEffect } from "react";
-import { useProducts, useProductStore } from "../../hooks/useProductStore";
 
 export function Product() {
   const { id } = useParams();
-  //const { addToCart, clearCart } = useCart();
   const url = API_ONLINE_SHOP_URL + "/" + id;
-  //const { data, loading, error } = useFetch(url);
-  const { fetchProduct, product, isLoading, hasError } = useProducts();
+  const { data, loading, error } = useFetch(url);
   const { addToCart, clearCart } = useCart();
+  const { title, imageUrl, price, discountedPrice, rating, description } = data;
 
-  useEffect(() => {
-    fetchProduct(url);
-  }, [url]);
-
-  if (isLoading) {
+  if (loading) {
     return <div>...........loading.............</div>;
   }
 
-  if (hasError) {
+  if (error) {
     return <div>my error message</div>;
   }
 
-  const { title, imageUrl, rating, price, discountedPrice, description } = product;
-
   function addToCartButtOnClick() {
-    addToCart(product);
+    addToCart(data);
   }
 
   function clearToCartButtOnClick() {

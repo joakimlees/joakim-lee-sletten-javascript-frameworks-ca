@@ -1,24 +1,17 @@
 import { API_ONLINE_SHOP_URL } from "../../api/constants";
-//import { useFetch } from "../../hooks/useFetch";
+import { useFetch } from "../../hooks/useFetch";
 import { ProductCard } from "../ProductCard";
 import * as Styles from "../styles/index";
-import { useProducts, useProductStore } from "../../hooks/useProductStore";
 import { useEffect } from "react";
 
 export function Products() {
-  //const { data, loading, error } = useFetch(API_ONLINE_SHOP_URL);
+  const { data, loading, error } = useFetch(API_ONLINE_SHOP_URL);
 
-  const { fetchProducts, products, isLoading, hasError } = useProducts();
-
-  useEffect(() => {
-    fetchProducts(API_ONLINE_SHOP_URL);
-  }, [API_ONLINE_SHOP_URL]);
-
-  if (isLoading) {
+  if (loading) {
     return <div>loading..................</div>;
   }
 
-  if (hasError) {
+  if (error) {
     return <div>my error</div>;
   }
 
@@ -27,7 +20,7 @@ export function Products() {
       <Styles.BaseContainer>
         <h2>List of products</h2>
         <ul>
-          {products.map(product => (
+          {data.map(product => (
             <ProductCard key={product.id} product={product} />
           ))}
         </ul>

@@ -1,4 +1,4 @@
-import { create } from "zustand";
+/*import { create } from "zustand";
 
 export const useProductStore = create(set => ({
   products: [],
@@ -37,3 +37,4 @@ export function useProducts() {
 
   return { fetchProducts, fetchProduct, product, products, isLoading, hasError };
 }
+*/
