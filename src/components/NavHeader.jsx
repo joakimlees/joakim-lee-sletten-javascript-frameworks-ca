@@ -6,12 +6,6 @@ import useLocalStorage from "../hooks/useLocalStorage";
 import { useEffect } from "react";
 
 export function NavHeader() {
-  const vogn = useCartStore(state => state.cart);
-
-  useEffect(() => {
-    console.log("nav render");
-  }, [vogn]);
-
   return (
     <Styles.NavHeader>
       <div className="logo">Ecom-Store</div>

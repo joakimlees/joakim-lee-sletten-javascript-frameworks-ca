@@ -1,19 +1,18 @@
 import * as Styled from "../styles/index";
-import { useCartStore } from "../../hooks/useCart";
+import { useCart } from "../../hooks/useCart";
 
 export function Cart() {
-  const test = useCartStore(state => state.products);
+  const { cart } = useCart();
 
-  const vals = test.map(function (a) {
+  const vals = cart.map(function (a) {
     return a;
   });
-
-  console.log(vals);
 
   return (
     <Styled.Cart>
       <Styled.BaseContainer>
         <h1>Cart page</h1>
+        <div>{console.log(cart)}</div>
       </Styled.BaseContainer>
     </Styled.Cart>
   );

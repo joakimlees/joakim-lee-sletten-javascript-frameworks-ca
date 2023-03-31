@@ -4,7 +4,6 @@ import { useFetch } from "../../hooks/useFetch";
 import * as Styled from "../styles/index";
 import { Link } from "react-router-dom";
 import { useCart } from "../../hooks/useCart";
-import { useEffect } from "react";
 
 export function Product() {
   const { id } = useParams();
@@ -32,7 +31,6 @@ export function Product() {
   return (
     <Styled.Product>
       <Styled.BaseContainer>
-        <h1></h1>
         <article>
           <h1>Product</h1>
           <div className="product-content-wrapper">
