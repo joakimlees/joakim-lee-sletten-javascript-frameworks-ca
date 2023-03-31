@@ -18,7 +18,7 @@ export function useCart() {
   const [value, setValue] = useLocalStorage();
 
   useEffect(() => {
-    if (cart.length === 0 && value) {
+    if (cart.length < 1 && value) {
       cart.push(...value);
       console.log(cart);
       console.log("set local to cart");
