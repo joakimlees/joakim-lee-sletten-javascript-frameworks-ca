@@ -1,9 +1,10 @@
 import * as Styled from "../styles/index";
 import { useCart } from "../../hooks/useCart";
 import { CartItem } from "../CartItem";
+import { Link } from "react-router-dom";
 
 export function Cart() {
-  const { cart } = useCart();
+  const { clearCart, cart } = useCart();
 
   // refactor to function and refactor names
   // map current cart id's
@@ -25,6 +26,10 @@ export function Cart() {
   const newArray = finalCart.filter((items, index) => cart.findIndex(item => item.id === items.id) === index);
   console.log(newArray);
 
+  function clearToCartButtOnClick() {
+    clearCart();
+  }
+
   return (
     <Styled.Cart>
       <Styled.BaseContainer>
@@ -34,6 +39,12 @@ export function Cart() {
             <CartItem key={product.id} product={product} />
           ))}
         </ul>
+        <div className="button-wrapper">
+          <button>Clear cart</button>
+          <Link to="/checkout-success" onClick={clearToCartButtOnClick}>
+            Complete order
+          </Link>
+        </div>
       </Styled.BaseContainer>
     </Styled.Cart>
   );

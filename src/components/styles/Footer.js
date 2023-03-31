@@ -6,4 +6,5 @@ export const Footer = styled.footer`
   font-family: ${({ theme }) => theme.font.family.paragraphs};
   font-size: ${({ theme }) => theme.font.size.small};
   padding: 50px 20px;
+  margin-top: 50px;
 `;
