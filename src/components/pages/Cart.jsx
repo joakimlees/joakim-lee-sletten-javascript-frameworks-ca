@@ -7,10 +7,6 @@ export function Cart() {
   const { data, loading, error } = useFetch(API_ONLINE_SHOP_URL);
   const { cart } = useCart();
 
-  const vals = cart.map(function (a) {
-    return a;
-  });
-
   if (loading) {
     return <div>loading..................</div>;
   }
@@ -23,7 +19,7 @@ export function Cart() {
     <Styled.Cart>
       <Styled.BaseContainer>
         <h1>Cart page</h1>
-        <div>{console.log(cart)}</div>
+        <div>{/*console.log(cart)*/}</div>
       </Styled.BaseContainer>
     </Styled.Cart>
   );
