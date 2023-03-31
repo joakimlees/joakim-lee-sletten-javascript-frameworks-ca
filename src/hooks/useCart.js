@@ -4,7 +4,7 @@ import useLocalStorage from "./useLocalStorage";
 export const useCartStore = create(set => ({
   cart: [],
   addToCart: item => {
-    set(state => ({ cart: [{ id: item.id, title: item.title, price: item.price, rating: item.rating, discountedPrice: item.discountedPrice, description: item.description }, ...state.cart] }));
+    set(state => ({ cart: [{ id: item.id, title: item.title, price: item.price, imageUrl: item.imageUrl, rating: item.rating, discountedPrice: item.discountedPrice, description: item.description }, ...state.cart] }));
   },
   clearCart: () => set({ cart: [] }),
 }));
