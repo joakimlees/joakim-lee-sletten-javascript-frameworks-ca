@@ -2,7 +2,6 @@ import { API_ONLINE_SHOP_URL } from "../../api/constants";
 import { useFetch } from "../../hooks/useFetch";
 import { ProductCard } from "../ProductCard";
 import * as Styles from "../styles/index";
-import { useEffect } from "react";
 
 export function Products() {
   const { data, loading, error } = useFetch(API_ONLINE_SHOP_URL);

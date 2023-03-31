@@ -1,11 +1,13 @@
 import * as Styles from "./styles/index";
-import cart from "../build/images/cart.svg";
+import cartImg from "../build/images/cartImg.svg";
 import { Link } from "react-router-dom";
-import { useCartStore } from "../hooks/useCart";
-import useLocalStorage from "../hooks/useLocalStorage";
-import { useEffect } from "react";
+import { useCart } from "../hooks/useCart";
 
 export function NavHeader() {
+  const { cart } = useCart();
+
+  const cartCount = cart.length;
+
   return (
     <Styles.NavHeader>
       <div className="logo">Ecom-Store</div>
@@ -25,9 +27,9 @@ export function NavHeader() {
         </nav>
         <Link to="/cart">
           <div className="cart-container">
-            <div className="cart-counter">0</div>
+            <div className="cart-counter">{cartCount}</div>
             <div className="cart-icon-wrapper">
-              <img src={cart} alt="logo" />
+              <img src={cartImg} alt="logo" />
             </div>
           </div>
         </Link>

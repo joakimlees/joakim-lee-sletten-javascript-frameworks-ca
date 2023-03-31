@@ -1,7 +1,6 @@
 import * as Styled from "../styles/index";
 import { useCart } from "../../hooks/useCart";
-import { useFetch } from "../../hooks/useFetch";
-import { API_ONLINE_SHOP_URL } from "../../api/constants";
+import { CartItem } from "../CartItem";
 
 export function Cart() {
   const { cart } = useCart();
@@ -32,7 +31,7 @@ export function Cart() {
         <h1>Cart page</h1>
         <ul>
           {newArray.map(product => (
-            <div key={product.id}>{product.count}</div>
+            <CartItem key={product.id} product={product} />
           ))}
         </ul>
       </Styled.BaseContainer>
