@@ -6,6 +6,7 @@ import { API_ONLINE_SHOP_URL } from "../../api/constants";
 export function Cart() {
   const { cart } = useCart();
 
+  // refactor to function and refactor names
   // map current cart id's
   const arr = cart.map(products => {
     return products.id;
@@ -29,7 +30,11 @@ export function Cart() {
     <Styled.Cart>
       <Styled.BaseContainer>
         <h1>Cart page</h1>
-        <div>{/*console.log(cart)*/}</div>
+        <ul>
+          {newArray.map(product => (
+            <div key={product.id}>{product.count}</div>
+          ))}
+        </ul>
       </Styled.BaseContainer>
     </Styled.Cart>
   );
