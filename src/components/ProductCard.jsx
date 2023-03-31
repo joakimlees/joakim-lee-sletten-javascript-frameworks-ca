@@ -2,7 +2,13 @@ import { Link } from "react-router-dom";
 import * as Styles from "./styles/index";
 import { useCart } from "../hooks/useCart";
 
-export function ProductCard({ product: { id, title, imageUrl, rating, price, discountedPrice } }) {
+export function ProductCard({ product: { id, title, imageUrl, rating, price, discountedPrice }, product }) {
+  const { addToCart } = useCart();
+
+  function addToCartButtonClick() {
+    addToCart(product);
+  }
+
   return (
     <Styles.ProductCard>
       <article>
@@ -16,7 +22,7 @@ export function ProductCard({ product: { id, title, imageUrl, rating, price, dis
           <div className="discount-price">discount Price: {discountedPrice}</div>
         </div>
         <div className="button-wrapper">
-          <button>Add to cart</button>
+          <button onClick={addToCartButtonClick}>Add to cart</button>
           <Link to={`/product/${id}`}>See details</Link>
         </div>
       </article>
