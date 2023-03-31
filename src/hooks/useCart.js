@@ -4,15 +4,8 @@ import useLocalStorage from "./useLocalStorage";
 
 export const useCartStore = create(set => ({
   cart: [],
-
-  getLocalStorage: value => {
-    const newCart = localStorage.getItem(value);
-
-    set(state => ({ cart: newCart }));
-  },
-
   addToCart: item => {
-    set(state => ({ cart: [{ id: item.id, title: item.title }, ...state.cart] }));
+    set(state => ({ cart: [{ title: item.title }, ...state.cart] }));
   },
   clearCart: () => set({ cart: [] }),
 }));
@@ -25,16 +18,24 @@ export function useCart() {
   const [value, setValue] = useLocalStorage();
 
   useEffect(() => {
-    setValue(cart);
+    if (cart.length === 0 && value) {
+      cart.push(...value);
+      console.log(cart);
+      console.log("set local to cart");
+    }
   }, [cart]);
 
   function addToCart(id) {
-    add(id);
     console.log(cart);
+    console.log("click ADD TO CART");
+    add(id);
+    console.log("click cart TO local");
+    setValue(cart);
   }
 
   function clearCart() {
     clear();
+    setValue([]);
   }
 
   return { addToCart, clearCart };

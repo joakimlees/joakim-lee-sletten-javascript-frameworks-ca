@@ -6,14 +6,11 @@ import useLocalStorage from "../hooks/useLocalStorage";
 import { useEffect } from "react";
 
 export function NavHeader() {
-  const localCart = useCartStore(state => state.getLocalStorage);
-  const cart = useCartStore(state => state.cart);
-  //const [value, setValue] = useLocalStorage();
+  const vogn = useCartStore(state => state.cart);
 
   useEffect(() => {
-    const test = localCart();
-    console.log(test);
-  }, [cart]);
+    console.log("nav render");
+  }, [vogn]);
 
   return (
     <Styles.NavHeader>
