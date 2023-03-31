@@ -4,16 +4,11 @@ import { useFetch } from "../../hooks/useFetch";
 import { API_ONLINE_SHOP_URL } from "../../api/constants";
 
 export function Cart() {
-  const { data, loading, error } = useFetch(API_ONLINE_SHOP_URL);
   const { cart } = useCart();
 
-  if (loading) {
-    return <div>loading..................</div>;
-  }
-
-  if (error) {
-    return <div>my error</div>;
-  }
+  console.log("before");
+  console.log(cart);
+  console.log("after");
 
   return (
     <Styled.Cart>

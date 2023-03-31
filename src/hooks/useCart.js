@@ -1,13 +1,10 @@
-import { useEffect } from "react";
 import { create } from "zustand";
 import useLocalStorage from "./useLocalStorage";
-import { useFetch } from "./useFetch";
-import { API_ONLINE_SHOP_URL } from "../api/constants";
 
 export const useCartStore = create(set => ({
   cart: [],
   addToCart: item => {
-    set(state => ({ cart: [{ id: item.id }, ...state.cart] }));
+    set(state => ({ cart: [{ id: item.id, title: item.title, price: item.price, rating: item.rating, discountedPrice: item.discountedPrice, description: item.description }, ...state.cart] }));
   },
   clearCart: () => set({ cart: [] }),
 }));
@@ -19,11 +16,6 @@ export function useCart() {
   const clear = useCartStore(state => state.clearCart);
   const cart = useCartStore(state => state.cart);
   const [value, setValue] = useLocalStorage();
-
-  // start
-
-  const { data, loading, error } = useFetch(API_ONLINE_SHOP_URL);
-  // end
 
   if (cart.length < 1 && value) {
     cart.push(...value);
