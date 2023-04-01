@@ -4,8 +4,18 @@ export const Products = styled.main`
   flex-grow: 1;
 
   form {
-    display: flex;
-    flex-direction: center;
+    max-width: 600px;
+    margin: 50px auto;
+
+    fieldset {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      input {
+        width: 100%;
+      }
+    }
   }
 
   h2 {
