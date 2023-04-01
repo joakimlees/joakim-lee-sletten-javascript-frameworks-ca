@@ -9,7 +9,7 @@ export function Product() {
   const { id } = useParams();
   const url = API_ONLINE_SHOP_URL + "/" + id;
   const { data, loading, error } = useFetch(url);
-  const { addToCart, clearCart } = useCart();
+  const { addToCart } = useCart();
   const { title, imageUrl, price, discountedPrice, rating, description } = data;
 
   if (loading) {
@@ -22,10 +22,6 @@ export function Product() {
 
   function addToCartButtOnClick() {
     addToCart(data);
-  }
-
-  function clearToCartButtOnClick() {
-    clearCart();
   }
 
   return (
@@ -44,8 +40,7 @@ export function Product() {
               <div>{rating}</div>
               <div>{description}</div>
               <button onClick={addToCartButtOnClick}>Add to cart</button>
-              <button onClick={clearToCartButtOnClick}>Clear cart</button>
-              <Link to={`/checkout`}>Go to checkout</Link>
+              <Link to={`/cart`}>View Cart</Link>
             </article>
           </div>
         </article>

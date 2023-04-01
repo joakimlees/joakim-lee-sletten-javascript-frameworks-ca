@@ -40,10 +40,8 @@ export function Cart() {
           ))}
         </ul>
         <div className="button-wrapper">
-          <button>Clear cart</button>
-          <Link to="/checkout-success" onClick={clearToCartButtOnClick}>
-            Complete order
-          </Link>
+          <button onClick={clearToCartButtOnClick}>Clear cart</button>
+          <Link to="/checkout-success">Complete order</Link>
         </div>
       </Styled.BaseContainer>
     </Styled.Cart>

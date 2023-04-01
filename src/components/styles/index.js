@@ -9,3 +9,4 @@ export * from "./Product.styles";
 export * from "./Checkout.styles";
 export * from "./Cart.styles";
 export * from "./CartItem.styles";
+export * from "./CheckoutSuccess.styles";
