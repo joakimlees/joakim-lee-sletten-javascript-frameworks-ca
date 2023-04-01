@@ -10,3 +10,5 @@ export * from "./Checkout.styles";
 export * from "./Cart.styles";
 export * from "./CartItem.styles";
 export * from "./CheckoutSuccess.styles";
+export * from "./Contact.styles";
+export * from "./ContactForm.styles";

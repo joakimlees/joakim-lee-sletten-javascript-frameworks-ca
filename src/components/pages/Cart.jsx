@@ -30,6 +30,17 @@ export function Cart() {
     clearCart();
   }
 
+  if (newArray.length < 1) {
+    return (
+      <Styled.Cart>
+        <Styled.BaseContainer>
+          <h1>Cart page</h1>
+          <div>You have no products in your cart</div>
+        </Styled.BaseContainer>
+      </Styled.Cart>
+    );
+  }
+
   return (
     <Styled.Cart>
       <Styled.BaseContainer>

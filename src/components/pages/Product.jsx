@@ -31,7 +31,7 @@ export function Product() {
           <h1>Product</h1>
           <div className="product-content-wrapper">
             <div className="image-wrapper">
-              <img src={imageUrl} alt="" />
+              <img src={imageUrl} alt={`image of ` + title} />
             </div>
             <article className="product-info-wrapper">
               <h2>{title}</h2>
@@ -40,7 +40,7 @@ export function Product() {
               <div>{rating}</div>
               <div>{description}</div>
               <button onClick={addToCartButtOnClick}>Add to cart</button>
-              <Link to={`/cart`}>View Cart</Link>
+              <Link to={"/cart"}>View Cart</Link>
             </article>
           </div>
         </article>

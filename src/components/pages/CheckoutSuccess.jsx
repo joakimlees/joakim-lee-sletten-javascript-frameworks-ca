@@ -2,6 +2,7 @@ import * as Styled from "../styles/index";
 import { useCart } from "../../hooks/useCart";
 import { CartItem } from "../CartItem";
 import { useEffect } from "react";
+import { Link } from "react-router-dom";
 
 export function CheckoutSuccess() {
   const { clearCart, cart } = useCart();
@@ -37,12 +38,19 @@ export function CheckoutSuccess() {
   return (
     <Styled.CheckoutSuccess>
       <Styled.BaseContainer>
-        <h1>Checkout success</h1>
-        <ul>
-          {newArray.map(product => (
-            <CartItem key={product.id} product={product} />
-          ))}
-        </ul>
+        <h1>Order successfully completed</h1>
+        <article>
+          <h2>Thanks for your purchase</h2>
+          <Link to={"/"}>Back to home page</Link>
+        </article>
+        <article>
+          <h2>Order summary</h2>
+          <ul>
+            {newArray.map(product => (
+              <CartItem key={product.id} product={product} />
+            ))}
+          </ul>
+        </article>
       </Styled.BaseContainer>
     </Styled.CheckoutSuccess>
   );
