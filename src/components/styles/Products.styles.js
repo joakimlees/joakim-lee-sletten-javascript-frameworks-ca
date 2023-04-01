@@ -3,6 +3,11 @@ import styled from "styled-components";
 export const Products = styled.main`
   flex-grow: 1;
 
+  form {
+    display: flex;
+    flex-direction: center;
+  }
+
   h2 {
     text-align: center;
   }

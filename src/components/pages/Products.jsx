@@ -17,6 +17,12 @@ export function Products() {
   return (
     <Styles.Products>
       <Styles.BaseContainer>
+        <form action="">
+          <fieldset>
+            <label htmlFor="">Search</label>
+            <input type="text" />
+          </fieldset>
+        </form>
         <h2>List of products</h2>
         <ul>
           {data.map(product => (
