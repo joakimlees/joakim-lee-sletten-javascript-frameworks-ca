@@ -8,7 +8,7 @@ export function useForm() {
   const [isNameError, setIsNameError] = useState(false);
   const [isEmailError, setIsEmailError] = useState(false);
   const [isMessageError, setIsMessageError] = useState(false);
-  const [isFormError, setIsFormError] = useState(false);
+  const [isFormValid, setIsFormValid] = useState(false);
 
   function onFormSubmit(event) {
     event.preventDefault();
@@ -31,8 +31,8 @@ export function useForm() {
       setIsMessageError(true);
     }
 
-    if (isNameError && isEmailError && isMessageError) {
-      setIsFormError(true);
+    if (name.length > 2 && email.match(/\S+@\S+\.\S+/) && message.length > 14) {
+      setIsFormValid(true);
 
       const body = {
         name,
@@ -41,21 +41,9 @@ export function useForm() {
       };
 
       console.log(body);
+    } else {
+      setIsFormValid(false);
     }
-
-    /*
-
-       const body = {
-        name,
-        email,
-        message,
-      };
-
-    fetch("#", {
-      method: "POST",
-      body: JSON.stringify(body),
-    });
-    */
   }
 
   function onNameChange(event) {
@@ -68,5 +56,5 @@ export function useForm() {
     setMessage(event.target.value);
   }
 
-  return { name, email, message, onFormSubmit, onNameChange, onEmailChange, onMessageChange, isNameError, isEmailError, isMessageError, isFormError };
+  return { name, email, message, onFormSubmit, onNameChange, onEmailChange, onMessageChange, isNameError, isEmailError, isMessageError, isFormValid };
 }

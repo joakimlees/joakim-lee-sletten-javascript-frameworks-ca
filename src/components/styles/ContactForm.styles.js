@@ -9,6 +9,8 @@ export const ContactForm = styled.form`
   }
 
   .success {
+    background-color: black;
+    text-align: center;
     color: lightgreen;
   }
 
