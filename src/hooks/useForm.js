@@ -10,18 +10,35 @@ export function useForm() {
   function onFormSubmit(event) {
     event.preventDefault();
 
-    const body = {
-      name,
-      email,
-      message,
-    };
-    console.log(body);
-    /*
+    if (name.length > 3) {
+      setIsError(false);
+      setIsValid(true);
+
+      /*
+
+       const body = {
+        name,
+        email,
+        message,
+      };
+
     fetch("#", {
       method: "POST",
       body: JSON.stringify(body),
     });
     */
+    } else {
+      setIsError(true);
+      setIsValid(false);
+    }
+
+    if (message.length > 5) {
+      setIsValid(true);
+      setIsError(false);
+    } else {
+      setIsError(true);
+      setIsValid(false);
+    }
   }
 
   function onNameChange(event) {
@@ -34,5 +51,5 @@ export function useForm() {
     setMessage(event.target.value);
   }
 
-  return { onFormSubmit, onNameChange, onEmailChange, onMessageChange };
+  return { onFormSubmit, onNameChange, onEmailChange, onMessageChange, isError, isValid, name, message };
 }
