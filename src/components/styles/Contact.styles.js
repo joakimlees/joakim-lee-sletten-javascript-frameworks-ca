@@ -10,6 +10,8 @@ export const Contact = styled.main`
     align-items: center;
   }
 
+  
+
   button {
     border-solid;
     background-color: lightgreen;
