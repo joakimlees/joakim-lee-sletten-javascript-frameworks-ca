@@ -9,4 +9,10 @@ export const Contact = styled.main`
     flex-direction: column;
     align-items: center;
   }
+
+  button {
+    border-solid;
+    background-color: lightgreen;
+    padding: 20px 50px;
+  }
 `;

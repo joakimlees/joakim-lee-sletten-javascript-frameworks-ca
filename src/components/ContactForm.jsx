@@ -1,32 +1,24 @@
 import * as Styled from "./styles/index";
-import { useState } from "react";
+import { useForm } from "../hooks/useForm";
 
 export function ContactForm() {
-  const [values, setValues] = useState({
-    name: "",
-    email: "",
-    subject: "",
-    message: "",
-  });
+  const { onFormSubmit, onNameChange, onEmailChange, onMessageChange } = useForm();
 
   return (
-    <Styled.ContactForm>
+    <Styled.ContactForm onSubmit={onFormSubmit}>
       <div className="field-wrapper">
-        <label htmlFor="name">Name: </label>
-        <input type="text" id="name" />
+        <label htmlFor="name">Name:</label>
+        <input type="text" name="name" onChange={onNameChange} />
       </div>
       <div className="field-wrapper">
-        <label htmlFor="email">email: </label>
-        <input type="email" id="email" />
-      </div>
-      <div className="field-wrapper">
-        <label htmlFor="subject">Subject: </label>
-        <input type="text" id="subject" />
+        <label htmlFor="email">email:</label>
+        <input type="email" name="email" onChange={onEmailChange} />
       </div>
       <div className="field-wrapper">
         <label htmlFor="message">Message: </label>
-        <textarea name="" id="message" cols="30" rows="10"></textarea>
+        <textarea name="message" cols="30" rows="10" onChange={onMessageChange}></textarea>
       </div>
+      <button>Send</button>
     </Styled.ContactForm>
   );
 }
