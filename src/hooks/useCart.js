@@ -9,8 +9,6 @@ export const useCartStore = create(set => ({
   clearCart: () => set({ cart: [] }),
 }));
 
-// REFACTOR names!!!
-
 export function useCart() {
   const add = useCartStore(state => state.addToCart);
   const clear = useCartStore(state => state.clearCart);
@@ -24,13 +22,11 @@ export function useCart() {
   function addToCart(id) {
     add(id);
     setValue(cart);
-    console.log(cart);
   }
 
   function clearCart() {
     clear();
     setValue([]);
-    console.log(cart);
   }
 
   return { addToCart, clearCart, cart };

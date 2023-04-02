@@ -1,7 +1,7 @@
 import * as Styles from "./styles/index";
 import { calculateTotalPrice } from "../utils/calculateTotalPrice";
 
-export function CartItem({ product: { id, count, title, imageUrl, rating, price, discountedPrice } }) {
+export function CartItem({ product: { count, title, imageUrl, price, discountedPrice } }) {
   return (
     <Styles.CartItem>
       <article>
