@@ -30,8 +30,6 @@ export function ProductCard({ product: { id, title, imageUrl, rating, price, dis
               <div>Price: {price + ",-"}</div>
             </>
           )}
-          {/*<div className="price">Price {price}</div>
-          <div className="discount-price">discount Price: {discountedPrice}</div> */}
         </div>
         <div className="button-wrapper">
           <button onClick={addToCartButtonClick}>Add to cart</button>

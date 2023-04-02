@@ -1,11 +1,11 @@
 export const theme = {
   color: {
-    primary: "#0A3641",
-    dark: "#1C2026",
-    light: "#D0D0D9",
-    green: "#34665B",
-    lightgreen: "#75D998",
-    red: "#9D1111",
+    primary: "#003940",
+    dark: "#161616",
+    purple: "#5F2B99",
+    red: "#A82608",
+    green: "#97E650",
+    yellow: "#FFBC4A",
   },
   font: {
     family: {

@@ -2,8 +2,8 @@ import styled from "styled-components";
 
 export const NavHeader = styled.header`
   text-align: center;
-  background-color: ${({ theme }) => theme.color.dark};
-  color: ${({ theme }) => theme.color.light};
+  background-color: ${({ theme }) => theme.color.primary};
+  color: white;
   font-size: ${({ theme }) => theme.font.size.medium};
 
   nav {
@@ -15,28 +15,26 @@ export const NavHeader = styled.header`
       padding: 20px 0px;
       margin: 0px;
       list-style: none;
-      color: ${({ theme }) => theme.color.lightgreen};
       font-family: ${({ theme }) => theme.font.family.paragraphs};
       font-weight: ${({ theme }) => theme.font.weight.semiBold};
 
       li {
         margin: 0px 20px;
-
-        a {
-          color: ${({ theme }) => theme.color.lightgreen};
-          text-decoration: none;
-          :hover {
-            color: red;
-          }
-        }
       }
+    }
+  }
+
+  a {
+    color: ${({ theme }) => theme.color.yellow};
+    text-decoration: none;
+    :hover {
+      color: ${({ theme }) => theme.color.primary};
     }
   }
 
   .cart-container {
     display: flex;
     align-items: center;
-    color: ${({ theme }) => theme.color.lightgreen};
 
     .cart-icon-wrapper {
       width: 40px;

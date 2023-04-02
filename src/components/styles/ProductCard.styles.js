@@ -3,7 +3,10 @@ import styled from "styled-components";
 export const ProductCard = styled.li`
   padding: 10px;
   border-style: solid;
-  background-color: lightblue;
+  border-width: 2px;
+  border-radius: 5px;
+  border-color: ${({ theme }) => theme.color.primary};
+  background-color: ${({ theme }) => theme.color.yellow};
 
   article {
     display: flex;
@@ -36,9 +39,11 @@ export const ProductCard = styled.li`
 
     .discount-value {
       padding: 5px;
+      border-radius: 5px;
       border: solid;
-      color: white;
-      background-color: green;
+      border-width: 1px;
+      color: ${({ theme }) => theme.color.dark};
+      background-color: ${({ theme }) => theme.color.green};
     }
   }
 
@@ -49,13 +54,24 @@ export const ProductCard = styled.li`
 
   a,
   button {
+    border-radius: 5px;
     text-align: center;
     text-decoration: none;
-    background-color: lightgreen;
-    color: black;
     font-weight: bold;
-    border: solid;
     padding: 10px;
     width: 100%;
+  }
+
+  a {
+    background-color: ${({ theme }) => theme.color.primary};
+    color: white;
+
+    margin-left: 2.5px;
+  }
+  button {
+    background-color: ${({ theme }) => theme.color.green};
+    margin-right: 2.5px;
+    border: solid;
+    border-width: 2px;
   }
 `;
