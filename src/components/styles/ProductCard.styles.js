@@ -25,8 +25,21 @@ export const ProductCard = styled.li`
   }
 
   .price-wrapper {
+    margin: 10px 0px;
     display: flex;
     justify-content: space-between;
+    align-items: baseline;
+
+    .old-price {
+      text-decoration: line-through;
+    }
+
+    .discount-value {
+      padding: 5px;
+      border: solid;
+      color: white;
+      background-color: green;
+    }
   }
 
   .button-wrapper {

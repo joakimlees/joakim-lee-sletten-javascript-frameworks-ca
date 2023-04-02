@@ -1,18 +1,13 @@
 import { Link } from "react-router-dom";
 import * as Styles from "./styles/index";
 import { useCart } from "../hooks/useCart";
+import { calculateDiscountValue } from "../utils/calculateDiscountValue";
 
 export function ProductCard({ product: { id, title, imageUrl, rating, price, discountedPrice }, product }) {
   const { addToCart } = useCart();
 
   function addToCartButtonClick() {
     addToCart(product);
-  }
-
-  function getDiscount(oldPrice, newPrice) {
-    const calculated = ((newPrice - oldPrice) / oldPrice) * 100;
-    const discount = Math.trunc(calculated);
-    return discount;
   }
 
   return (
@@ -26,10 +21,15 @@ export function ProductCard({ product: { id, title, imageUrl, rating, price, dis
         <div className="price-wrapper">
           {discountedPrice < price ? (
             <>
-              <div> discount: {getDiscount(price, discountedPrice) + "%"}</div>
-              <div>dsadsa</div>
+              <div>Price: {discountedPrice + ",-"}</div>
+              <div className="old-price">{price + ",-"}</div>
+              <div className="discount-value"> Save: {calculateDiscountValue(price, discountedPrice) + "%"}</div>
             </>
-          ) : null}
+          ) : (
+            <>
+              <div>Price: {price + ",-"}</div>
+            </>
+          )}
           {/*<div className="price">Price {price}</div>
           <div className="discount-price">discount Price: {discountedPrice}</div> */}
         </div>
