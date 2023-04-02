@@ -13,12 +13,12 @@ export function CheckoutSuccess() {
 
   const roundedTotalPrice = getTotalPrice(newCart);
 
-  function clearToCartButtOnClick() {
-    clearCart();
-  }
-
   useEffect(() => {
-    clearCart();
+    function clearTheCart() {
+      clearCart();
+    }
+
+    clearTheCart();
   }, []);
 
   return (
