@@ -40,7 +40,9 @@ export function Cart() {
         <div className="total-price">Total Price: {roundedTotalPrice + ",-"} </div>
         <div className="button-wrapper">
           <button onClick={clearToCartButtOnClick}>Clear cart</button>
-          <Link to="/checkout-success">Complete order</Link>
+          <Link to="/checkout-success" onClick={clearToCartButtOnClick}>
+            Complete order
+          </Link>
         </div>
       </Styled.BaseContainer>
     </Styled.Cart>

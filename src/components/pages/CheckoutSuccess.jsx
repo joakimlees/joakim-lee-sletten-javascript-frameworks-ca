@@ -7,12 +7,6 @@ import { addCountProperty } from "../../utils/addCountProperty";
 import { getTotalPrice } from "../../utils/getTotalPrice";
 
 export function CheckoutSuccess() {
-  const { cart } = useCart();
-
-  const newCart = addCountProperty(cart);
-
-  const roundedTotalPrice = getTotalPrice(newCart);
-
   return (
     <Styled.CheckoutSuccess>
       <Styled.BaseContainer>
@@ -20,15 +14,6 @@ export function CheckoutSuccess() {
         <article>
           <h2>Thanks for your purchase</h2>
           <Link to={"/"}>Back to home page</Link>
-        </article>
-        <article>
-          <h2>Order summary</h2>
-          <div className="total-price">Total Price: {roundedTotalPrice}</div>
-          <ul>
-            {newCart.map(product => (
-              <CartItem key={product.id} product={product} />
-            ))}
-          </ul>
         </article>
       </Styled.BaseContainer>
     </Styled.CheckoutSuccess>

@@ -45,14 +45,14 @@ export const Cart = styled.main`
     button,
     a {
       font-family: ${({ theme }) => theme.font.family.buttons};
-      border-radius: 5px;
+      border-radius: 2px;
       width: 100%;
       text-align: center;
       text-decoration: none;
       padding: 10px;
-      background-color: ${({ theme }) => theme.color.green};
+      background-color: ${({ theme }) => theme.color.red};
       border: solid;
-      color: ${({ theme }) => theme.color.primary};
+      color: white;
       font-weight: ${({ theme }) => theme.font.weight.bold};
 
       :hover {
@@ -68,7 +68,8 @@ export const Cart = styled.main`
     }
 
     a {
-      background-color: ${({ theme }) => theme.color.yellow};
+      background-color: ${({ theme }) => theme.color.green};
+      color: ${({ theme }) => theme.color.primary};
     }
   }
 
