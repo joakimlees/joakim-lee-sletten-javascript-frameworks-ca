@@ -9,6 +9,12 @@ export function ProductCard({ product: { id, title, imageUrl, rating, price, dis
     addToCart(product);
   }
 
+  function getDiscount(oldPrice, newPrice) {
+    const calculated = ((newPrice - oldPrice) / oldPrice) * 100;
+    const discount = Math.trunc(calculated);
+    return discount;
+  }
+
   return (
     <Styles.ProductCard>
       <article>
@@ -18,8 +24,14 @@ export function ProductCard({ product: { id, title, imageUrl, rating, price, dis
         <h3>{title}</h3>
         <div className="rating">Rating: {rating}</div>
         <div className="price-wrapper">
-          <div className="price">Price {price}</div>
-          <div className="discount-price">discount Price: {discountedPrice}</div>
+          {discountedPrice < price ? (
+            <>
+              <div> discount: {getDiscount(price, discountedPrice) + "%"}</div>
+              <div>dsadsa</div>
+            </>
+          ) : null}
+          {/*<div className="price">Price {price}</div>
+          <div className="discount-price">discount Price: {discountedPrice}</div> */}
         </div>
         <div className="button-wrapper">
           <button onClick={addToCartButtonClick}>Add to cart</button>
