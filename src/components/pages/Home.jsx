@@ -7,11 +7,11 @@ export function Home() {
   const { data, loading, error } = useFetch(API_ONLINE_SHOP_URL);
 
   if (loading) {
-    return <div>loading..................</div>;
+    return <div className="loading-fetch">loading..................</div>;
   }
 
   if (error) {
-    return <div>my error</div>;
+    return <div className="error-fetch">Sorry.. something went wrong. try to reload the site or try again later</div>;
   }
 
   return (

@@ -4,14 +4,24 @@ export const ContactForm = styled.form`
   max-width: 500px;
   width: 100%;
 
+  label,
+  input,
+  textarea {
+    font-family: ${({ theme }) => theme.font.family.paragraphs};
+    font-size: ${({ theme }) => theme.font.family.medium};
+    border-radius: 5px;
+  }
+
   .error {
-    color: red;
+    color: ${({ theme }) => theme.color.red};
   }
 
   .success {
-    background-color: black;
+    padding: 20px;
+    border-radius: 5px;
+    background-color: ${({ theme }) => theme.color.green};
     text-align: center;
-    color: lightgreen;
+    color: ${({ theme }) => theme.color.primary};
   }
 
   .hide {

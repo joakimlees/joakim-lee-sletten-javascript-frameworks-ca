@@ -10,7 +10,9 @@ export function NavHeader() {
 
   return (
     <Styles.NavHeader>
-      <div className="logo">Ecom-Store</div>
+      <div className="logo">
+        <Link to="/">Ecom-Store</Link>
+      </div>
       <Styles.TopNavContainer>
         <nav>
           <ul>

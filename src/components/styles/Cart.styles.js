@@ -71,4 +71,8 @@ export const Cart = styled.main`
       background-color: ${({ theme }) => theme.color.yellow};
     }
   }
+
+  .no-products-message {
+    text-align: center;
+  }
 `;

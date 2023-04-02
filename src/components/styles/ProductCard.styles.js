@@ -8,9 +8,14 @@ export const ProductCard = styled.li`
   border-color: ${({ theme }) => theme.color.primary};
   background-color: ${({ theme }) => theme.color.yellow};
 
+  h1, h2, h3 {
+    font-family: ${({ theme }) => theme.font.family.headings};
+  }
+
   article {
     display: flex;
     flex-direction: column;
+    font-family: ${({ theme }) => theme.font.family.paragraphs};
   }
 
   .image-wrapper {
@@ -57,6 +62,7 @@ export const ProductCard = styled.li`
 
   a,
   button {
+    font-family: ${({ theme }) => theme.font.family.buttons};
     border-radius: 5px;
     text-align: center;
     text-decoration: none;
@@ -73,7 +79,6 @@ export const ProductCard = styled.li`
     margin-left: 2.5px;
 
     :hover {
-      border: solid;
       border-width: 1px;
       border-color: ${({ theme }) => theme.color.primary}
       color: ${({ theme }) => theme.color.primary};

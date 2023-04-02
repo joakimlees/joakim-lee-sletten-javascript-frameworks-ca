@@ -62,7 +62,7 @@ export function Cart() {
       <Styled.Cart>
         <Styled.BaseContainer>
           <h1>Cart page</h1>
-          <div>You have no products in your cart</div>
+          <div className="no-products-message">You have no products in your cart</div>
         </Styled.BaseContainer>
       </Styled.Cart>
     );

@@ -11,20 +11,21 @@ export function Products() {
   const searchedData = setDataToSearch(data);
 
   if (loading) {
-    return <div>loading..................</div>;
+    return <div className="loading-fetch">loading.....</div>;
   }
 
   if (error) {
-    return <div>my error</div>;
+    return <div className="error-fetch">Sorry.. something went wrong. try to reload the site or try again later</div>;
   }
 
   return (
     <Styles.Products>
       <Styles.BaseContainer>
+        <h1>Products page</h1>
         <form>
           <fieldset>
-            <label htmlFor="search">Search</label>
-            <input type="text" name="search" onChange={onSearchChange} />
+            <label htmlFor="search">Search for product</label>
+            <input type="text" name="search" placeholder="Search here..." onChange={onSearchChange} />
           </fieldset>
         </form>
         <h2>List of products</h2>
@@ -35,7 +36,7 @@ export function Products() {
             ))}
           </ul>
         ) : (
-          <h3 className="no-searchMatch-heading">No matching products</h3>
+          <h3 className="no-searchMatch-heading">No products match your current search</h3>
         )}
       </Styles.BaseContainer>
     </Styles.Products>

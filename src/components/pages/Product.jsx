@@ -13,11 +13,11 @@ export function Product() {
   const { title, imageUrl, price, discountedPrice, rating, description } = data;
 
   if (loading) {
-    return <div>...........loading.............</div>;
+    return <div className="loading-fetch">loading......</div>;
   }
 
   if (error) {
-    return <div>my error message</div>;
+    return <div className="error-fetch">Sorry.. something went wrong. try to reload the site or try again later</div>;
   }
 
   function addToCartButtOnClick() {

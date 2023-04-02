@@ -12,10 +12,16 @@ body {
 }
 
 
-.test {
-  flex-grow: 1;
-  background-color: lightblue;
-}
+.error-fetch, .loading-fetch {
+    font-size: ${({ theme }) => theme.font.size.xLarge};
+    text-align: center;
+    margin-top: 70px;
+    font-family: ${({ theme }) => theme.font.family.paragraphs};
+  }
+
+  .error-fetch {
+    color: ${({ theme }) => theme.color.red};
+  }
 
 #root {
   height: 100%;
