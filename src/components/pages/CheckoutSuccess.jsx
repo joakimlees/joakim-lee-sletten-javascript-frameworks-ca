@@ -19,7 +19,7 @@ export function CheckoutSuccess() {
 
   useEffect(() => {
     clearToCartButtOnClick();
-  }, []);
+  }, [null]);
 
   return (
     <Styled.CheckoutSuccess>

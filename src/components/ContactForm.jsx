@@ -10,17 +10,17 @@ export function ContactForm() {
       <div className="field-wrapper">
         <label htmlFor="name">Name:</label>
         <input placeholder="Enter your name here..." type="text" name="name" onChange={onNameChange} />
-        <div className={!isNameError || name == 0 ? "hide" : "error"}>Name must be atleast 3 characters</div>
+        <div className={!isNameError || name === 0 ? "hide" : "error"}>Name must be at least 3 characters</div>
       </div>
       <div className="field-wrapper">
         <label htmlFor="email">email:</label>
         <input placeholder="Enter your email address here..." type="email" name="email" onChange={onEmailChange} />
-        <div className={!isEmailError || email == 0 ? "hide" : "error"}>Please enter a valid email address</div>
+        <div className={!isEmailError || email === 0 ? "hide" : "error"}>Please enter a valid email address</div>
       </div>
       <div className="field-wrapper">
         <label htmlFor="message">Message: </label>
         <textarea name="message" cols="30" rows="10" placeholder="Provide your message here..." onChange={onMessageChange}></textarea>
-        <div className={!isMessageError || message == 0 ? "hide" : "error"}>Message must be at least 15 characters</div>
+        <div className={!isMessageError || message === 0 ? "hide" : "error"}>Message must be at least 15 characters</div>
       </div>
       <button>Send</button>
     </Styled.ContactForm>
