@@ -2,9 +2,13 @@ import { API_ONLINE_SHOP_URL } from "../../api/constants";
 import { useFetch } from "../../hooks/useFetch";
 import { ProductCard } from "../ProductCard";
 import * as Styles from "../styles/index";
+import useSearch from "../../hooks/useSearch";
 
 export function Products() {
   const { data, loading, error } = useFetch(API_ONLINE_SHOP_URL);
+  const { onSearchChange, matchSearch } = useSearch();
+
+  const searchedData = matchSearch(data);
 
   if (loading) {
     return <div>loading..................</div>;
@@ -17,18 +21,22 @@ export function Products() {
   return (
     <Styles.Products>
       <Styles.BaseContainer>
-        <form action="">
+        <form>
           <fieldset>
-            <label htmlFor="">Search</label>
-            <input type="text" />
+            <label htmlFor="search">Search</label>
+            <input type="text" name="search" onChange={onSearchChange} />
           </fieldset>
         </form>
         <h2>List of products</h2>
-        <ul>
-          {data.map(product => (
-            <ProductCard key={product.id} product={product} />
-          ))}
-        </ul>
+        {searchedData ? (
+          <ul>
+            {searchedData.map(product => (
+              <ProductCard key={product.id} product={product} />
+            ))}
+          </ul>
+        ) : (
+          <h3 className="no-searchMatch-heading">No matching products</h3>
+        )}
       </Styles.BaseContainer>
     </Styles.Products>
   );
