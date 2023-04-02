@@ -1,10 +1,5 @@
 import * as Styled from "../styles/index";
-import { useCart } from "../../hooks/useCart";
-import { CartItem } from "../CartItem";
-import { useEffect } from "react";
 import { Link } from "react-router-dom";
-import { addCountProperty } from "../../utils/addCountProperty";
-import { getTotalPrice } from "../../utils/getTotalPrice";
 
 export function CheckoutSuccess() {
   return (
