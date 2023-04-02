@@ -16,10 +16,8 @@ function App() {
           <Route path="products" element={<Page.Products />} />
           <Route path="product/:id" element={<Page.Product />} />
           <Route path="cart" element={<Page.Cart />} />
-          <Route path="checkout" element={<Page.Checkout />} />
           <Route path="checkout-success" element={<Page.CheckoutSuccess />} />
           <Route path="contact" element={<Page.Contact />} />
-          <Route path="cart" element={<Page.Cart />} />
         </Route>
       </Routes>
     </ThemeProvider>
