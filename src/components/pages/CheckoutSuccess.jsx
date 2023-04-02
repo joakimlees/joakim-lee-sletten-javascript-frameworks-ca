@@ -18,11 +18,8 @@ export function CheckoutSuccess() {
   const roundedTotalPrice = getTotalPrice(newCart);
 
   useEffect(() => {
-    function clearTheCart() {
-      clear();
-      setValue([]);
-    }
-    clearTheCart();
+    clear();
+    setValue([]);
   }, []);
 
   return (
