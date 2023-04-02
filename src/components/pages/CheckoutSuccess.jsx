@@ -5,22 +5,13 @@ import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { addCountProperty } from "../../utils/addCountProperty";
 import { getTotalPrice } from "../../utils/getTotalPrice";
-import { useCartStore } from "../../hooks/useCart";
-import useLocalStorage from "../../hooks/useLocalStorage";
 
 export function CheckoutSuccess() {
   const { cart } = useCart();
-  const clear = useCartStore(state => state.clearCart);
-  const [value, setValue] = useLocalStorage();
 
   const newCart = addCountProperty(cart);
 
   const roundedTotalPrice = getTotalPrice(newCart);
-
-  useEffect(() => {
-    clear();
-    setValue([]);
-  }, []);
 
   return (
     <Styled.CheckoutSuccess>
