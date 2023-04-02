@@ -1,3 +1,7 @@
+//takes array of objects.
+//adds a property "count" which indicate how many occurances the object it is in the array by using the value of the id property of each object.
+// filter the new array of objects(with the count property), returning only the first of the object that occurs in the array.
+//return the new array of objects with only unique object, but which has a count property.
 export function addCountProperty(array) {
   // map current cart id's
   const mappedCartIds = array.map(products => {
