@@ -72,12 +72,13 @@ export function Cart() {
     <Styled.Cart>
       <Styled.BaseContainer>
         <h1>Cart page</h1>
+        <h2>Products in your cart</h2>
         <ul>
           {newArray.map(product => (
             <CartItem key={product.id} product={product} />
           ))}
         </ul>
-        <div>Total Price: {roundedTotalPrice + ",-"} </div>
+        <div className="total-price">Total Price: {roundedTotalPrice + ",-"} </div>
         <div className="button-wrapper">
           <button onClick={clearToCartButtOnClick}>Clear cart</button>
           <Link to="/checkout-success">Complete order</Link>

@@ -28,7 +28,7 @@ export const NavHeader = styled.header`
     color: ${({ theme }) => theme.color.yellow};
     text-decoration: none;
     :hover {
-      color: ${({ theme }) => theme.color.primary};
+      color: ${({ theme }) => theme.color.green};
     }
   }
 

@@ -35,12 +35,13 @@ export function Product() {
             </div>
             <article className="product-info-wrapper">
               <h2>{title}</h2>
-              <div>{price}</div>
-              <div>{discountedPrice}</div>
-              <div>{rating}</div>
-              <div>{description}</div>
-              <button onClick={addToCartButtOnClick}>Add to cart</button>
-              <Link to={"/cart"}>View Cart</Link>
+              Price: {discountedPrice < price ? discountedPrice + ",-" : price + ",-"}
+              <div>Rating: {rating}</div>
+              <div>Details: {description}</div>
+              <div className="button-wrapper">
+                <button onClick={addToCartButtOnClick}>Add to cart</button>
+                <Link to={"/cart"}>View Cart</Link>
+              </div>
             </article>
           </div>
         </article>

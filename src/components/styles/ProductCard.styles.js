@@ -35,6 +35,9 @@ export const ProductCard = styled.li`
 
     .old-price {
       text-decoration: line-through;
+      color: ${({ theme }) => theme.color.red};
+      background-color: white;
+      padding: 3px;
     }
 
     .discount-value {
@@ -65,13 +68,33 @@ export const ProductCard = styled.li`
   a {
     background-color: ${({ theme }) => theme.color.primary};
     color: white;
-
+    margin-top: 10px;
+    margin-bottom: 5px;
     margin-left: 2.5px;
+
+    :hover {
+      border: solid;
+      border-width: 1px;
+      border-color: ${({ theme }) => theme.color.primary}
+      color: ${({ theme }) => theme.color.primary};
+      background-color: ${({ theme }) => theme.color.green};
+    }
   }
   button {
     background-color: ${({ theme }) => theme.color.green};
     margin-right: 2.5px;
+    margin-top: 10px;
+    margin-bottom: 5px;
     border: solid;
     border-width: 2px;
+
+    :hover {
+      background-color: white;
+    }
+
+    :active {
+      color: white;
+      background-color: ${({ theme }) => theme.color.dark};
+    }
   }
 `;

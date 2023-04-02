@@ -72,12 +72,12 @@ export function CheckoutSuccess() {
         </article>
         <article>
           <h2>Order summary</h2>
+          <div className="total-price">Total Price: {roundedTotalPrice}</div>
           <ul>
             {newArray.map(product => (
               <CartItem key={product.id} product={product} />
             ))}
           </ul>
-          <div>Total Price: {roundedTotalPrice}</div>
         </article>
       </Styled.BaseContainer>
     </Styled.CheckoutSuccess>
