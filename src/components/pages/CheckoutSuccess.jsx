@@ -18,8 +18,8 @@ export function CheckoutSuccess() {
   }
 
   useEffect(() => {
-    clearToCartButtOnClick();
-  }, [null]);
+    clearCart();
+  }, []);
 
   return (
     <Styled.CheckoutSuccess>
