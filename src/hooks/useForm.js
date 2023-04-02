@@ -1,5 +1,7 @@
 import { useState } from "react";
 
+//Hook which is used to validate a form.
+//uses states to set states for input values and errors(if they occure, is true)
 export function useForm() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");

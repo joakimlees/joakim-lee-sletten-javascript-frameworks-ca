@@ -1,11 +1,14 @@
 import { useState } from "react";
 
+// Hook for using search
+// returns two functions
+// a function to set the value of search term
+// a function to set filtered search term
 export default function useSearch() {
   const [searchTerm, setSearchTerm] = useState("");
 
   function onSearchChange(event) {
     setSearchTerm(event.target.value);
-    console.log(searchTerm);
   }
 
   function setDataToSearch(dataToSearch) {
