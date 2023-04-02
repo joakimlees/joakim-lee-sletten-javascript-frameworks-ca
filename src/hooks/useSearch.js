@@ -8,7 +8,7 @@ export default function useSearch() {
     console.log(searchTerm);
   }
 
-  function matchSearch(dataToSearch) {
+  function setDataToSearch(dataToSearch) {
     const filteredData = dataToSearch.filter(data => {
       const title = data.title.toLowerCase();
 
@@ -22,5 +22,5 @@ export default function useSearch() {
     }
   }
 
-  return { onSearchChange, matchSearch };
+  return { onSearchChange, setDataToSearch };
 }

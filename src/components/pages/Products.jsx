@@ -6,9 +6,9 @@ import useSearch from "../../hooks/useSearch";
 
 export function Products() {
   const { data, loading, error } = useFetch(API_ONLINE_SHOP_URL);
-  const { onSearchChange, matchSearch } = useSearch();
+  const { onSearchChange, setDataToSearch } = useSearch();
 
-  const searchedData = matchSearch(data);
+  const searchedData = setDataToSearch(data);
 
   if (loading) {
     return <div>loading..................</div>;
